@@ -59,7 +59,7 @@ export function Nav() {
             alt="Swarnim Kanwal"
             width={320}
             height={320}
-            className="h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-10 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             priority
           />
         </Link>

@@ -13,7 +13,7 @@ const facts = [
 
 export function About() {
   return (
-    <section id="about" className="relative py-32 px-6">
+    <section id="about" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6">
       <div className="max-w-275 mx-auto">
         <Reveal>
           <p className="font-mono text-xs text-accent tracking-[0.3em] uppercase mb-4 flex items-center gap-3">
@@ -22,9 +22,9 @@ export function About() {
           </p>
         </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-start">
           <Reveal variant="left" delay={0.1}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#EDEDED] mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#EDEDED] mb-4 sm:mb-6 leading-tight">
               I build things <span className="shine-text">for the web</span>.
             </h2>
             <div className="space-y-4 text-[#B8B0CC] leading-relaxed">

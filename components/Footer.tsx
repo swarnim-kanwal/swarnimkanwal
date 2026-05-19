@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="relative border-t border-accent/15 py-10 px-6 mt-12">
+    <footer className="relative border-t border-accent/15 py-8 sm:py-10 px-4 sm:px-6 mt-8 sm:mt-12">
       {/* Top accent gradient line */}
       <div
         aria-hidden="true"

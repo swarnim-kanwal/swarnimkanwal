@@ -128,14 +128,14 @@ function TiltCard({
 
 export function Projects() {
   return (
-    <section id="projects" className="relative py-32 px-6">
+    <section id="projects" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6">
       <div className="max-w-275 mx-auto">
         <Reveal>
           <p className="font-mono text-xs text-accent tracking-[0.3em] uppercase mb-4 flex items-center gap-3">
             <span className="inline-block w-8 h-px bg-accent" />
             04 — Projects
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#EDEDED] mb-12">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#EDEDED] mb-8 sm:mb-12">
             Things I&apos;ve <span className="shine-text">built</span>
           </h2>
         </Reveal>

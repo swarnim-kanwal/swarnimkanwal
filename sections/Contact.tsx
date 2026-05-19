@@ -57,23 +57,23 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-32 px-6">
+    <section id="contact" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6">
       <div className="max-w-275 mx-auto">
         <Reveal>
           <p className="font-mono text-xs text-accent tracking-[0.3em] uppercase mb-4 flex items-center gap-3">
             <span className="inline-block w-8 h-px bg-accent" />
             07 — Contact
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#EDEDED] mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#EDEDED] mb-4">
             Let&apos;s <span className="shine-text">build</span> something.
           </h2>
-          <p className="text-[#B8B0CC] leading-relaxed max-w-xl mb-12">
+          <p className="text-[#B8B0CC] leading-relaxed max-w-xl mb-8 sm:mb-12">
             I&apos;m open to internships, freelance projects, and junior frontend
             roles. Drop a message — I usually reply within a day.
           </p>
         </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           <Reveal variant="left" delay={0.1}>
             <RevealStagger className="space-y-4" gap={0.1}>
               {contacts.map(({ icon: Icon, label, value, href, external }) => (
@@ -94,11 +94,11 @@ export function Contact() {
                   >
                     <Icon size={18} className="text-accent" aria-hidden="true" />
                   </motion.div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs font-mono text-[#8A8A93] mb-0.5 uppercase tracking-widest">
                       {label}
                     </p>
-                    <p className="text-sm text-[#EDEDED] group-hover:text-accent transition-colors">
+                    <p className="text-sm text-[#EDEDED] group-hover:text-accent transition-colors truncate">
                       {value}
                     </p>
                   </div>

@@ -98,7 +98,7 @@ function AvatarParallax() {
     <motion.div
       onPointerMove={onMove}
       onPointerLeave={onLeave}
-      className="relative avatar-float w-75 h-95 sm:w-95 sm:h-120 lg:w-110 lg:h-135"
+      className="relative avatar-float w-52 h-64 sm:w-75 sm:h-95 lg:w-110 lg:h-135"
       style={{
         perspective: 1000,
         rotateX: rotX,
@@ -169,7 +169,7 @@ export function Hero() {
     <section
       ref={ref}
       id="hero"
-      className="min-h-screen flex flex-col justify-center relative px-6 pt-24 pb-16 overflow-hidden"
+      className="min-h-screen flex flex-col justify-center relative px-4 sm:px-6 pt-24 pb-12 sm:pb-16 overflow-hidden"
     >
       {/* Aurora layer specific to hero */}
       <div
@@ -182,7 +182,7 @@ export function Hero() {
       />
 
       <div className="max-w-275 mx-auto w-full relative">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Text */}
           <motion.div style={{ y: parallaxText, opacity: fade }}>
             <motion.p
@@ -195,7 +195,7 @@ export function Hero() {
               01 — Hello
             </motion.p>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#EDEDED] leading-[1.05] mb-6">
+            <h1 className="text-[2.5rem] sm:text-5xl lg:text-7xl font-bold tracking-tight text-[#EDEDED] leading-[1.05] mb-4 sm:mb-6">
               <ShatterText text={FIRST_NAME} delayStart={0.25} />
               <br />
               <ShatterText text={LAST_NAME} accent delayStart={0.55} />
@@ -205,7 +205,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 1.1, ease: EASE }}
-              className="text-lg sm:text-xl text-[#B8B0CC] leading-relaxed mb-4 max-w-xl"
+              className="text-base sm:text-lg md:text-xl text-[#B8B0CC] leading-relaxed mb-4 max-w-xl"
             >
               Frontend developer building clean, responsive web products — with
               code, design sense, and AI as a daily tool.
@@ -215,7 +215,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 1.25, ease: EASE }}
-              className="font-mono text-sm text-[#8A8A93] mb-10"
+              className="font-mono text-xs sm:text-sm text-[#8A8A93] mb-8 sm:mb-10"
             >
               Currently integrating Waystar into Aztute — EDI, APIs, and Mirth Connect.
             </motion.p>
