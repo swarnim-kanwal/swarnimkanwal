@@ -55,7 +55,7 @@ export function Nav() {
           aria-label="Swarnim Kanwal — home"
         >
           <Image
-            src="/images/Name.png"
+            src="/images/Name.webp"
             alt="Swarnim Kanwal"
             width={320}
             height={320}

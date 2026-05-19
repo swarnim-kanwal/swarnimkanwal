@@ -136,7 +136,7 @@ function AvatarParallax() {
           </span>
         ) : (
           <Image
-            src="/images/swarnim.png"
+            src="/images/swarnim.webp"
             alt="Swarnim Kanwal"
             fill
             className="object-contain object-center drop-shadow-[0_20px_40px_rgba(139,92,246,0.35)]"
