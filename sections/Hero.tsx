@@ -178,7 +178,7 @@ export function Hero() {
     <section
       ref={ref}
       id="hero"
-      className="min-h-screen flex flex-col justify-center relative px-4 sm:px-6 pt-24 pb-12 sm:pb-16 overflow-hidden"
+      className="min-h-screen flex flex-col justify-center relative px-4 sm:px-6 pt-32 sm:pt-40 pb-12 sm:pb-16 overflow-hidden"
     >
       {/* Aurora layer specific to hero */}
       <div

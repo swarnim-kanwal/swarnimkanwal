@@ -46,7 +46,7 @@ export function Nav() {
       }`}
     >
       <nav
-        className="max-w-275 mx-auto px-6 h-20 flex items-center justify-between"
+        className="max-w-275 mx-auto px-6 h-28 sm:h-36 flex items-center justify-between"
         aria-label="Main navigation"
       >
         <Link
@@ -59,7 +59,7 @@ export function Nav() {
             alt="Swarnim Kanwal"
             width={320}
             height={320}
-            className="h-10 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-20 sm:h-28 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             priority
           />
         </Link>
