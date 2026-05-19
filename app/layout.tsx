@@ -3,7 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { BackgroundFX } from "@/components/BackgroundFX";
-import { CursorGlow } from "@/components/CursorGlow";
+import { CustomCursor } from "@/components/CustomCursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,7 +58,7 @@ export default function RootLayout({
       <body className="bg-[#06000F] text-[#EDEDED] min-h-screen relative">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <BackgroundFX />
-          <CursorGlow />
+          <CustomCursor />
           {children}
           <div className="grain" aria-hidden="true" />
           <div className="vignette" aria-hidden="true" />

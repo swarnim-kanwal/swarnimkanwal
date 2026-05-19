@@ -48,6 +48,7 @@ function ShatterText({
         return (
           <motion.span
             key={`${ch}-${i}`}
+            suppressHydrationWarning
             className={`inline-block ${accent ? "text-accent" : ""}`}
             initial={
               reduce
