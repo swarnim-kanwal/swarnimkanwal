@@ -51,7 +51,7 @@ export function Contact() {
           <FadeIn delay={0.1}>
             <div className="space-y-6">
               <a
-                href="mailto:swarnimk4@gmail.com"
+                href="mailto:swarnimkanwal@gmail.com"
                 className="flex items-center gap-3 group"
               >
                 <div className="p-2.5 bg-[#111114] dark:bg-[#111114] border border-[#1F1F23] dark:border-[#1F1F23] rounded-lg group-hover:border-accent transition-colors">
@@ -62,7 +62,7 @@ export function Contact() {
                     Email
                   </p>
                   <p className="text-sm text-[#EDEDED] dark:text-[#EDEDED] group-hover:text-accent transition-colors">
-                    swarnimk4@gmail.com
+                    swarnimkanwal@gmail.com
                   </p>
                 </div>
               </a>
@@ -86,8 +86,10 @@ export function Contact() {
               </a>
 
               <a
-                href="#"
-                aria-label="LinkedIn profile (placeholder)"
+                href="https://www.linkedin.com/in/swarnimkanwal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
                 className="flex items-center gap-3 group"
               >
                 <div className="p-2.5 bg-[#111114] dark:bg-[#111114] border border-[#1F1F23] dark:border-[#1F1F23] rounded-lg group-hover:border-accent transition-colors">

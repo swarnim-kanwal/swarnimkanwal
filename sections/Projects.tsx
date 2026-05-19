@@ -17,6 +17,16 @@ const projects = [
   },
   {
     label: "02 — Featured Project",
+    title: "Raindrop — Client Website",
+    tagline: "Frontend development for a client web project",
+    description:
+      "Built the frontend of the Raindrop client website, working directly as a frontend developer on the project. Responsible for translating designs into responsive, production-ready UI — handling layout, components, cross-browser consistency, and iterative delivery based on client feedback.",
+    stack: ["HTML", "CSS", "JavaScript", "Responsive design", "Figma"],
+    confidential: false,
+    links: [],
+  },
+  {
+    label: "03 — Featured Project",
     title: "AI-Assisted Website Builds",
     tagline: "Multiple responsive sites shipped end-to-end with AI as a co-pilot",
     description:
@@ -26,7 +36,7 @@ const projects = [
     links: [{ type: "github", href: "#", label: "GitHub" }],
   },
   {
-    label: "03 — Featured Project",
+    label: "04 — Featured Project",
     title: "Personal Portfolio",
     tagline: "This site — designed and built from scratch",
     description:
