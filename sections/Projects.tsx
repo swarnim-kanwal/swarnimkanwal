@@ -7,11 +7,11 @@ import { FadeIn } from "@/components/FadeIn";
 const projects = [
   {
     label: "01 — Featured Project",
-    title: "Waystar Healthcare Platform",
-    tagline: "Production frontend work on a US healthcare product",
+    title: "Aztute × Waystar Integration",
+    tagline: "Healthcare data pipeline — API integration, EDI processing, and middleware architecture",
     description:
-      "Active contributor to a US healthcare platform. I build production frontend features, refine UI flows, and translate Figma designs into accessible, responsive components. Working in a regulated domain taught me to think beyond code — about edge cases, compliance, and real user impact.",
-    stack: ["HTML", "CSS", "JavaScript", "Component-based frontend", "Figma"],
+      "Built the full integration layer between Aztute (a healthcare platform) and Waystar (a US clearinghouse) using Mirth Connect as middleware. Responsibilities included creating and exposing APIs in Mirth, transforming incoming data into valid EDI transaction files, sending them securely to Waystar via API and SFTP, and routing Waystar's responses back into the Aztute database. The work spans middleware logic, EDI generation (837, 835, 270/271), healthcare data flow automation, and cross-system interoperability.",
+    stack: ["Mirth Connect", "EDI / HL7", "REST APIs", "SFTP", "Healthcare data", "Middleware"],
     confidential: true,
     links: [],
   },

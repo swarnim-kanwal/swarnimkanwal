@@ -4,7 +4,7 @@ import { MapPin, Briefcase, Activity, BookOpen } from "lucide-react";
 const facts = [
   { icon: MapPin, label: "Bahadurgarh, India" },
   { icon: Briefcase, label: "Frontend Developer" },
-  { icon: Activity, label: "Currently building on Waystar (healthcare)" },
+  { icon: Activity, label: "Currently integrating Waystar into Aztute (healthcare)" },
   { icon: BookOpen, label: "Currently learning: React patterns, TypeScript, system design" },
 ];
 
@@ -25,16 +25,18 @@ export function About() {
             </h2>
             <div className="space-y-4 text-[#8A8A93] dark:text-[#8A8A93] leading-relaxed">
               <p>
-                I&apos;m a frontend developer based in India, currently studying
-                Computer Science at MDU Rohtak and working on a US healthcare
-                product called Waystar. I started as a fresher with almost no
-                hands-on experience and grew into someone who ships production
-                features, talks to clients, and owns work end-to-end.
+                I&apos;m a developer based in India, currently studying Computer
+                Science at MDU Rohtak. I work on integrating healthcare systems
+                — specifically connecting Aztute, a healthcare platform, with
+                Waystar (a US clearinghouse) using Mirth Connect middleware, EDI
+                processing, and API automation. I started as a fresher and grew
+                into someone who owns complex integration work end-to-end.
               </p>
               <p>
-                I care about clean code, thoughtful interfaces, and using AI to
-                move faster without losing the craft. I&apos;m equally happy
-                debugging a CSS edge case or jumping on a client call.
+                Outside of integration work, I build websites and UIs — clean
+                code, thoughtful interfaces, and AI as a daily accelerator. I&apos;m
+                equally happy designing a data pipeline or shipping a responsive
+                component.
               </p>
             </div>
           </FadeIn>

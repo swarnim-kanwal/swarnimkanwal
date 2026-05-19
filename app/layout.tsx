@@ -15,31 +15,31 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Swarnim Kanwal — Frontend Developer",
+  title: "Swarnim Kanwal — Developer",
   description:
-    "Frontend developer building clean, responsive web products — with code, design sense, and AI as a daily tool. Currently shipping features on a US healthcare platform.",
+    "Developer specialising in web UI and healthcare system integration. Currently integrating Waystar into the Aztute platform via Mirth Connect, EDI processing, and API automation.",
   keywords: [
+    "developer",
     "frontend developer",
-    "web developer",
-    "React",
-    "Next.js",
-    "UI/UX",
-    "Figma",
+    "healthcare integration",
+    "Mirth Connect",
+    "EDI",
+    "API integration",
     "Swarnim Kanwal",
   ],
   authors: [{ name: "Swarnim Kanwal", url: "https://swarnimkanwal.dev" }],
   openGraph: {
-    title: "Swarnim Kanwal — Frontend Developer",
+    title: "Swarnim Kanwal — Developer",
     description:
-      "Frontend developer building clean, responsive web products — with code, design sense, and AI as a daily tool.",
+      "Developer specialising in web UI and healthcare system integration — Mirth Connect, EDI, API automation, and clean frontend work.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Swarnim Kanwal — Frontend Developer",
+    title: "Swarnim Kanwal — Developer",
     description:
-      "Frontend developer building clean, responsive web products — with code, design sense, and AI as a daily tool.",
+      "Developer specialising in web UI and healthcare system integration — Mirth Connect, EDI, API automation, and clean frontend work.",
   },
   robots: {
     index: true,

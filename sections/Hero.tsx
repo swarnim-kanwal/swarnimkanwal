@@ -65,7 +65,7 @@ export function Hero() {
             variants={item}
             className="font-mono text-sm text-[#8A8A93] dark:text-[#8A8A93] mb-10"
           >
-            Currently shipping features on a US healthcare platform.
+            Currently integrating Waystar into Aztute — EDI, APIs, and Mirth Connect.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-wrap gap-4">

@@ -2,14 +2,15 @@ import { FadeIn } from "@/components/FadeIn";
 
 const experiences = [
   {
-    role: "Frontend Developer",
-    company: "Healthcare Product Team",
-    project: "Aztute — Waystar integration",
+    role: "Integration Developer",
+    company: "Aztute Healthcare Platform",
+    project: "Waystar integration via Mirth Connect",
     period: "2024 — Present",
     bullets: [
-      "Integrated and shipped production frontend features on a US healthcare platform (Waystar) as part of the Aztute client project, under senior mentorship.",
-      "Build reusable, responsive UI components from Figma handoffs with cross-browser consistency and accessibility in mind.",
-      "Participate in code reviews, debugging sessions, and iterative releases — improving delivery speed and code quality continuously.",
+      "Integrated Waystar (a US healthcare clearinghouse) into the Aztute platform using Mirth Connect as middleware — building the full data pipeline from trigger to response.",
+      "Designed and exposed APIs in Mirth Connect that receive requests from Aztute, process incoming data and files, and transform them into valid EDI healthcare transaction files (837, 835, 270/271, etc.).",
+      "Implemented secure outbound communication to Waystar via API and SFTP, and handled inbound Waystar responses — parsing acknowledgements and pushing processed data back into the Aztute database.",
+      "Owned the end-to-end healthcare data flow: middleware logic, EDI generation, system interoperability, and automated transaction processing across platforms.",
     ],
   },
   {
