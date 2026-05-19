@@ -19,23 +19,32 @@ const EASE: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
 const FIRST_NAME = "Swarnim";
 const LAST_NAME = "Kanwal";
 
+// Seeded deterministic random — same value on server and client for the same seed.
+function sr(seed: number): number {
+  const x = Math.sin(seed + 1) * 10000;
+  return x - Math.floor(x);
+}
+
 function ShatterText({
   text,
   accent = false,
   delayStart = 0,
+  seedOffset = 0,
 }: {
   text: string;
   accent?: boolean;
   delayStart?: number;
+  seedOffset?: number;
 }) {
   const reduce = useReducedMotion();
 
   return (
     <span className="inline-block">
       {text.split("").map((ch, i) => {
-        const rx = (Math.random() - 0.5) * 80;
-        const ry = (Math.random() - 0.5) * 60 - 20;
-        const rr = (Math.random() - 0.5) * 30;
+        const s = seedOffset + i;
+        const rx = (sr(s * 3) - 0.5) * 80;
+        const ry = (sr(s * 3 + 1) - 0.5) * 60 - 20;
+        const rr = (sr(s * 3 + 2) - 0.5) * 30;
         return (
           <motion.span
             key={`${ch}-${i}`}
@@ -196,9 +205,9 @@ export function Hero() {
             </motion.p>
 
             <h1 className="text-[2.5rem] sm:text-5xl lg:text-7xl font-bold tracking-tight text-[#EDEDED] leading-[1.05] mb-4 sm:mb-6">
-              <ShatterText text={FIRST_NAME} delayStart={0.25} />
+              <ShatterText text={FIRST_NAME} delayStart={0.25} seedOffset={0} />
               <br />
-              <ShatterText text={LAST_NAME} accent delayStart={0.55} />
+              <ShatterText text={LAST_NAME} accent delayStart={0.55} seedOffset={100} />
             </h1>
 
             <motion.p
