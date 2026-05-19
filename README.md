@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Swarnim Kanwal — Portfolio
+
+Personal portfolio built with Next.js 16, Tailwind CSS v4, and Framer Motion.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where to add real links
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| File | What to update |
+|------|---------------|
+| `sections/Contact.tsx` | GitHub and LinkedIn `href` values |
+| `sections/Projects.tsx` | Project `href` values in each `links` array |
+| `app/layout.tsx` | `authors[0].url` in metadata |
 
-## Learn More
+## Where to drop project screenshots
 
-To learn more about Next.js, take a look at the following resources:
+Place images in `public/projects/` and reference them in `sections/Projects.tsx` using `next/image`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```tsx
+import Image from "next/image";
+<Image src="/projects/project-name.png" alt="Project screenshot" width={600} height={400} className="rounded-lg" />
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Wire up the contact form
 
-## Deploy on Vercel
+The form logs to console by default. To use Formspree, replace the `onSubmit` body in `sections/Contact.tsx`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```ts
+const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data),
+});
+if (!res.ok) throw new Error("Submission failed");
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy to Vercel (one step)
+
+Push to GitHub, then import at vercel.com/new — Vercel auto-detects Next.js with zero config.
