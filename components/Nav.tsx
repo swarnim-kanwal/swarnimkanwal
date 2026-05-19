@@ -62,12 +62,12 @@ export function Nav() {
       }`}
     >
       <nav
-        className="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between"
+        className="max-w-275 mx-auto px-6 h-16 flex items-center justify-between"
         aria-label="Main navigation"
       >
         <a
           href="#"
-          className="font-mono text-lg font-medium text-[#3B82F6] tracking-tight hover:opacity-80 transition-opacity"
+          className="font-mono text-lg font-medium text-accent tracking-tight hover:opacity-80 transition-opacity"
           aria-label="Swarnim Kanwal — home"
         >
           sk
@@ -80,7 +80,7 @@ export function Nav() {
                 onClick={() => handleNavClick(link.href)}
                 className={`text-sm transition-colors duration-200 cursor-pointer ${
                   activeSection === link.href.slice(1)
-                    ? "text-[#3B82F6]"
+                    ? "text-accent"
                     : "text-[#8A8A93] hover:text-[#EDEDED] dark:text-[#8A8A93] dark:hover:text-[#EDEDED]"
                 }`}
               >

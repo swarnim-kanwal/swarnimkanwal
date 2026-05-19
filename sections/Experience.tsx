@@ -4,10 +4,10 @@ const experiences = [
   {
     role: "Frontend Developer",
     company: "Healthcare Product Team",
-    project: "Waystar project",
+    project: "Aztute — Waystar integration",
     period: "2024 — Present",
     bullets: [
-      "Ship production frontend features on a US healthcare platform, ramping up on a complex business domain under senior mentorship.",
+      "Integrated and shipped production frontend features on a US healthcare platform (Waystar) as part of the Aztute client project, under senior mentorship.",
       "Build reusable, responsive UI components from Figma handoffs with cross-browser consistency and accessibility in mind.",
       "Participate in code reviews, debugging sessions, and iterative releases — improving delivery speed and code quality continuously.",
     ],
@@ -29,9 +29,9 @@ const experiences = [
 export function Experience() {
   return (
     <section id="experience" className="py-24 px-6">
-      <div className="max-w-[1100px] mx-auto">
+      <div className="max-w-275 mx-auto">
         <FadeIn>
-          <p className="font-mono text-xs text-[#3B82F6] tracking-widest uppercase mb-4">
+          <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
             03 — Experience
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#EDEDED] dark:text-[#EDEDED] mb-12">
@@ -41,7 +41,7 @@ export function Experience() {
 
         <div className="relative">
           <div
-            className="absolute left-0 top-0 bottom-0 w-px bg-[#1F1F23] dark:bg-[#1F1F23] ml-[7px] hidden sm:block"
+            className="absolute left-0 top-0 bottom-0 w-px bg-[#1F1F23] dark:bg-[#1F1F23] ml-1.75 hidden sm:block"
             aria-hidden="true"
           />
 
@@ -50,7 +50,7 @@ export function Experience() {
               <FadeIn key={exp.role} delay={i * 0.1}>
                 <div className="sm:pl-10 relative">
                   <div
-                    className="absolute left-0 top-1 w-3.5 h-3.5 rounded-full border-2 border-[#3B82F6] bg-[#0A0A0B] dark:bg-[#0A0A0B] hidden sm:block"
+                    className="absolute left-0 top-1 w-3.5 h-3.5 rounded-full border-2 border-accent bg-[#0A0A0B] dark:bg-[#0A0A0B] hidden sm:block"
                     aria-hidden="true"
                   />
 
@@ -78,7 +78,7 @@ export function Experience() {
                         className="flex items-start gap-3 text-sm text-[#8A8A93] dark:text-[#8A8A93] leading-relaxed"
                       >
                         <span
-                          className="text-[#3B82F6] mt-1.5 shrink-0 text-xs"
+                          className="text-accent mt-1.5 shrink-0 text-xs"
                           aria-hidden="true"
                         >
                           ▸

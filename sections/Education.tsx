@@ -11,9 +11,9 @@ const certifications = [
 export function Education() {
   return (
     <section id="education" className="py-24 px-6">
-      <div className="max-w-[1100px] mx-auto">
+      <div className="max-w-275 mx-auto">
         <FadeIn>
-          <p className="font-mono text-xs text-[#3B82F6] tracking-widest uppercase mb-4">
+          <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
             06 — Education
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#EDEDED] dark:text-[#EDEDED] mb-12">
@@ -28,7 +28,7 @@ export function Education() {
                 <div className="p-2.5 bg-[#1F1F23] dark:bg-[#1F1F23] rounded-lg shrink-0">
                   <GraduationCap
                     size={18}
-                    className="text-[#3B82F6]"
+                    className="text-accent"
                     aria-hidden="true"
                   />
                 </div>
@@ -53,7 +53,7 @@ export function Education() {
                 <div className="p-2.5 bg-[#1F1F23] dark:bg-[#1F1F23] rounded-lg shrink-0">
                   <Award
                     size={18}
-                    className="text-[#3B82F6]"
+                    className="text-accent"
                     aria-hidden="true"
                   />
                 </div>
@@ -68,7 +68,7 @@ export function Education() {
                         className="text-sm text-[#8A8A93] dark:text-[#8A8A93] flex items-start gap-2"
                       >
                         <span
-                          className="text-[#3B82F6] mt-1 text-xs shrink-0"
+                          className="text-accent mt-1 text-xs shrink-0"
                           aria-hidden="true"
                         >
                           ▸

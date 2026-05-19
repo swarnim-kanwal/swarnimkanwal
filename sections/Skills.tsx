@@ -54,9 +54,9 @@ const skillGroups = [
 export function Skills() {
   return (
     <section id="skills" className="py-24 px-6">
-      <div className="max-w-[1100px] mx-auto">
+      <div className="max-w-275 mx-auto">
         <FadeIn>
-          <p className="font-mono text-xs text-[#3B82F6] tracking-widest uppercase mb-4">
+          <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
             05 — Skills
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#EDEDED] dark:text-[#EDEDED] mb-12">
@@ -68,7 +68,7 @@ export function Skills() {
           {skillGroups.map((group, i) => (
             <FadeIn key={group.label} delay={i * 0.07}>
               <div>
-                <p className="font-mono text-xs text-[#3B82F6] tracking-widest uppercase mb-4">
+                <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
                   {group.label}
                 </p>
                 <ul className="space-y-2" role="list">

@@ -11,9 +11,9 @@ const facts = [
 export function About() {
   return (
     <section id="about" className="py-24 px-6">
-      <div className="max-w-[1100px] mx-auto">
+      <div className="max-w-275 mx-auto">
         <FadeIn>
-          <p className="font-mono text-xs text-[#3B82F6] tracking-widest uppercase mb-4">
+          <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
             02 — About
           </p>
         </FadeIn>
@@ -49,7 +49,7 @@ export function About() {
                   <li key={label} className="flex items-start gap-3">
                     <Icon
                       size={16}
-                      className="text-[#3B82F6] mt-0.5 shrink-0"
+                      className="text-accent mt-0.5 shrink-0"
                       aria-hidden="true"
                     />
                     <span className="text-sm text-[#8A8A93] dark:text-[#8A8A93]">
