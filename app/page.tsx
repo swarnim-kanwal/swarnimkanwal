@@ -1,12 +1,7 @@
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/sections/Hero";
-import { About } from "@/sections/About";
-import { Experience } from "@/sections/Experience";
-import { Projects } from "@/sections/Projects";
-import { Skills } from "@/sections/Skills";
-import { Education } from "@/sections/Education";
-import { Contact } from "@/sections/Contact";
+import { PageTransition } from "@/components/PageTransition";
 
 export default function Home() {
   return (
@@ -19,13 +14,9 @@ export default function Home() {
       </a>
       <Nav />
       <main id="main-content">
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Education />
-        <Contact />
+        <PageTransition>
+          <Hero />
+        </PageTransition>
       </main>
       <Footer />
     </>

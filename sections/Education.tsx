@@ -1,4 +1,7 @@
-import { FadeIn } from "@/components/FadeIn";
+"use client";
+
+import { motion } from "framer-motion";
+import { Reveal } from "@/components/Reveal";
 import { GraduationCap, Award } from "lucide-react";
 
 const certifications = [
@@ -10,62 +13,81 @@ const certifications = [
 
 export function Education() {
   return (
-    <section id="education" className="py-24 px-6">
+    <section id="education" className="relative py-32 px-6">
       <div className="max-w-275 mx-auto">
-        <FadeIn>
-          <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
+        <Reveal>
+          <p className="font-mono text-xs text-accent tracking-[0.3em] uppercase mb-4 flex items-center gap-3">
+            <span className="inline-block w-8 h-px bg-accent" />
             06 — Education
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#EDEDED] dark:text-[#EDEDED] mb-12">
-            Education &amp; certifications
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#EDEDED] mb-12">
+            Education &amp; <span className="shine-text">certifications</span>
           </h2>
-        </FadeIn>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <FadeIn delay={0.1}>
-            <div className="bg-[#111114] dark:bg-[#111114] border border-[#1F1F23] dark:border-[#1F1F23] rounded-xl p-6">
+          <Reveal variant="left" delay={0.1}>
+            <motion.div
+              whileHover={{ y: -6, rotateX: 2, rotateY: -2 }}
+              transition={{ duration: 0.3 }}
+              style={{ transformPerspective: 1000 }}
+              className="group relative glass rounded-2xl p-6 overflow-hidden border border-accent/15 hover:border-accent/40 transition-colors duration-500"
+            >
+              <span className="sweep-bar" aria-hidden="true" />
               <div className="flex items-start gap-4">
-                <div className="p-2.5 bg-[#1F1F23] dark:bg-[#1F1F23] rounded-lg shrink-0">
+                <motion.div
+                  whileHover={{ rotate: -8 }}
+                  className="p-3 bg-accent/10 border border-accent/30 rounded-xl shrink-0 group-hover:glow-accent transition-shadow duration-500"
+                >
                   <GraduationCap
-                    size={18}
+                    size={20}
                     className="text-accent"
                     aria-hidden="true"
                   />
-                </div>
+                </motion.div>
                 <div>
-                  <h3 className="font-semibold text-[#EDEDED] dark:text-[#EDEDED] mb-1">
+                  <h3 className="font-semibold text-[#EDEDED] mb-1 group-hover:text-accent transition-colors">
                     B.Tech, Computer Science Engineering
                   </h3>
-                  <p className="text-sm text-[#8A8A93] dark:text-[#8A8A93] mb-1">
+                  <p className="text-sm text-[#B8B0CC] mb-1">
                     Maharshi Dayanand University, Rohtak
                   </p>
-                  <p className="font-mono text-xs text-[#8A8A93] dark:text-[#8A8A93]">
+                  <p className="font-mono text-xs text-accent/80 px-2 py-0.5 inline-block bg-accent/5 border border-accent/15 rounded">
                     2021 — Present
                   </p>
                 </div>
               </div>
-            </div>
-          </FadeIn>
+            </motion.div>
+          </Reveal>
 
-          <FadeIn delay={0.2}>
-            <div className="bg-[#111114] dark:bg-[#111114] border border-[#1F1F23] dark:border-[#1F1F23] rounded-xl p-6">
+          <Reveal variant="right" delay={0.2}>
+            <motion.div
+              whileHover={{ y: -6, rotateX: 2, rotateY: 2 }}
+              transition={{ duration: 0.3 }}
+              style={{ transformPerspective: 1000 }}
+              className="group relative glass rounded-2xl p-6 overflow-hidden border border-accent/15 hover:border-accent/40 transition-colors duration-500"
+            >
+              <span className="sweep-bar" aria-hidden="true" />
               <div className="flex items-start gap-4">
-                <div className="p-2.5 bg-[#1F1F23] dark:bg-[#1F1F23] rounded-lg shrink-0">
-                  <Award
-                    size={18}
-                    className="text-accent"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[#EDEDED] dark:text-[#EDEDED] mb-3">
+                <motion.div
+                  whileHover={{ rotate: 8 }}
+                  className="p-3 bg-accent/10 border border-accent/30 rounded-xl shrink-0 group-hover:glow-accent transition-shadow duration-500"
+                >
+                  <Award size={20} className="text-accent" aria-hidden="true" />
+                </motion.div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-[#EDEDED] mb-3 group-hover:text-accent transition-colors">
                     Certifications
                   </h3>
                   <ul className="space-y-2" role="list">
-                    {certifications.map((cert) => (
-                      <li
+                    {certifications.map((cert, i) => (
+                      <motion.li
                         key={cert}
-                        className="text-sm text-[#8A8A93] dark:text-[#8A8A93] flex items-start gap-2"
+                        initial={{ opacity: 0, x: -8 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: 0.3 + i * 0.07 }}
+                        className="text-sm text-[#B8B0CC] flex items-start gap-2 hover:text-[#EDEDED] transition-colors"
                       >
                         <span
                           className="text-accent mt-1 text-xs shrink-0"
@@ -74,13 +96,13 @@ export function Education() {
                           ▸
                         </span>
                         {cert}
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                 </div>
               </div>
-            </div>
-          </FadeIn>
+            </motion.div>
+          </Reveal>
         </div>
       </div>
     </section>

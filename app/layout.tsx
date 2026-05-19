@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { BackgroundFX } from "@/components/BackgroundFX";
+import { CursorGlow } from "@/components/CursorGlow";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,26 +43,25 @@ export const metadata: Metadata = {
     description:
       "Developer specialising in web UI and healthcare system integration — Mirth Connect, EDI, API automation, and clean frontend work.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
       suppressHydrationWarning
       className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="bg-[#0A0A0B] text-[#EDEDED] dark:bg-[#0A0A0B] dark:text-[#EDEDED] min-h-screen transition-colors duration-300">
+      <body className="bg-[#06000F] text-[#EDEDED] min-h-screen relative">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <BackgroundFX />
+          <CursorGlow />
           {children}
+          <div className="grain" aria-hidden="true" />
+          <div className="vignette" aria-hidden="true" />
         </ThemeProvider>
       </body>
     </html>

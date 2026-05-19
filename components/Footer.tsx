@@ -1,11 +1,22 @@
 export function Footer() {
   return (
-    <footer className="border-t border-[#1F1F23] dark:border-[#1F1F23] py-8 px-6">
+    <footer className="relative border-t border-accent/15 py-10 px-6 mt-12">
+      {/* Top accent gradient line */}
+      <div
+        aria-hidden="true"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, rgba(139,92,246,0.8), transparent)",
+        }}
+      />
+
       <div className="max-w-275 mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p className="text-sm text-[#8A8A93] dark:text-[#8A8A93]">
-          Designed &amp; built by Swarnim Kanwal · 2026
+        <p className="text-sm text-[#B8B0CC]">
+          Designed &amp; built by{" "}
+          <span className="text-accent font-medium">Swarnim Kanwal</span> · 2026
         </p>
-        <p className="text-sm text-[#8A8A93] dark:text-[#8A8A93] font-mono text-xs">
+        <p className="font-mono text-xs text-[#8A8A93]">
           Made with code, coffee, and a little AI.
         </p>
       </div>

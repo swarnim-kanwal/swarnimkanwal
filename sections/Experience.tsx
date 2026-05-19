@@ -1,4 +1,8 @@
-import { FadeIn } from "@/components/FadeIn";
+"use client";
+
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Reveal } from "@/components/Reveal";
 
 const experiences = [
   {
@@ -28,55 +32,85 @@ const experiences = [
 ];
 
 export function Experience() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 80%", "end 30%"],
+  });
+  const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   return (
-    <section id="experience" className="py-24 px-6">
+    <section id="experience" className="relative py-32 px-6">
       <div className="max-w-275 mx-auto">
-        <FadeIn>
-          <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
+        <Reveal>
+          <p className="font-mono text-xs text-accent tracking-[0.3em] uppercase mb-4 flex items-center gap-3">
+            <span className="inline-block w-8 h-px bg-accent" />
             03 — Experience
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#EDEDED] dark:text-[#EDEDED] mb-12">
-            Where I&apos;ve worked
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#EDEDED] mb-12">
+            Where I&apos;ve <span className="shine-text">worked</span>
           </h2>
-        </FadeIn>
+        </Reveal>
 
-        <div className="relative">
+        <div ref={ref} className="relative">
+          {/* Static track */}
           <div
-            className="absolute left-0 top-0 bottom-0 w-px bg-[#1F1F23] dark:bg-[#1F1F23] ml-1.75 hidden sm:block"
+            className="absolute left-0 top-0 bottom-0 w-px bg-accent/15 ml-1.75 hidden sm:block"
+            aria-hidden="true"
+          />
+          {/* Filling progress line synced to scroll */}
+          <motion.div
+            className="absolute left-0 top-0 bottom-0 w-px ml-1.75 hidden sm:block origin-top"
+            style={{
+              scaleY: lineScale,
+              background:
+                "linear-gradient(to bottom, #8B5CF6, #A78BFA, transparent)",
+              boxShadow: "0 0 10px rgba(139,92,246,0.6)",
+            }}
             aria-hidden="true"
           />
 
-          <div className="space-y-12">
+          <div className="space-y-14">
             {experiences.map((exp, i) => (
-              <FadeIn key={exp.role} delay={i * 0.1}>
-                <div className="sm:pl-10 relative">
+              <Reveal key={exp.role} variant="up" delay={i * 0.1}>
+                <div className="sm:pl-10 relative group">
+                  {/* Pulsing dot */}
                   <div
-                    className="absolute left-0 top-1 w-3.5 h-3.5 rounded-full border-2 border-accent bg-[#0A0A0B] dark:bg-[#0A0A0B] hidden sm:block"
+                    className="absolute left-0 top-1 w-3.5 h-3.5 rounded-full border-2 border-accent bg-[#06000F] hidden sm:block z-10"
                     aria-hidden="true"
-                  />
+                  >
+                    <span
+                      className="absolute inset-0 rounded-full"
+                      style={{ animation: "pulse-ring 2.4s ease-in-out infinite" }}
+                    />
+                  </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div>
-                      <h3 className="text-lg font-semibold text-[#EDEDED] dark:text-[#EDEDED]">
+                      <h3 className="text-lg sm:text-xl font-semibold text-[#EDEDED] group-hover:text-accent transition-colors">
                         {exp.role}
                       </h3>
-                      <p className="text-sm text-[#8A8A93] dark:text-[#8A8A93]">
+                      <p className="text-sm text-[#B8B0CC]">
                         {exp.company}
                         {exp.project && (
-                          <span className="font-mono"> — {exp.project}</span>
+                          <span className="font-mono text-[#8A8A93]"> — {exp.project}</span>
                         )}
                       </p>
                     </div>
-                    <span className="font-mono text-xs text-[#8A8A93] dark:text-[#8A8A93] whitespace-nowrap mt-1">
+                    <span className="font-mono text-xs text-accent/80 whitespace-nowrap mt-1 px-2.5 py-1 rounded-full border border-accent/20 bg-accent/5">
                       {exp.period}
                     </span>
                   </div>
 
                   <ul className="space-y-2.5" role="list">
-                    {exp.bullets.map((bullet) => (
-                      <li
+                    {exp.bullets.map((bullet, bi) => (
+                      <motion.li
                         key={bullet}
-                        className="flex items-start gap-3 text-sm text-[#8A8A93] dark:text-[#8A8A93] leading-relaxed"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-40px" }}
+                        transition={{ duration: 0.5, delay: bi * 0.07 }}
+                        className="flex items-start gap-3 text-sm text-[#B8B0CC] leading-relaxed"
                       >
                         <span
                           className="text-accent mt-1.5 shrink-0 text-xs"
@@ -85,11 +119,11 @@ export function Experience() {
                           ▸
                         </span>
                         {bullet}
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                 </div>
-              </FadeIn>
+              </Reveal>
             ))}
           </div>
         </div>
